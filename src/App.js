@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Editeinfo from "./component/Editeinfo";
+import Form from "./component/Form";
 
+import Tabledata from "./component/Tabledata";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Form />} />
+          <Route path="/table-data" element={<Tabledata />} />
+          <Route path="/edite/:id" element={<Editeinfo />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
